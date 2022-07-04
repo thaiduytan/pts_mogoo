@@ -1,0 +1,79 @@
+mixin ListItem(title, caption)
+	li.item 
+		h2.title= title
+		if caption 
+			span.caption= caption
+		if block 
+			block
+
+mixin menuLink(title,href="#")
+	li.header-menu-item 
+		a.header-menu-link(href=href)= title
+mixin headerBottomItem(data)
+	.header-bottom-item(class= data.class)
+		span.header-bottom-number= data.number
+		span.header-bottom-text= data.title
+mixin blockBox(caption, title, desc)
+	.block-box 
+		h3.block-box-caption= caption 
+		h2.block-box-title= title 
+		if desc 
+			p.block-box-desc= desc
+mixin aboutItem(src, iconClass, title, alt="ABC....")
+	.about-item
+		img.about-image(src=src, alt=alt) 
+		.about-content 
+			i.about-icon(class= iconClass)
+			span.about-title= title
+mixin numberItem(count="42", text="ABC")
+	.number-item
+		h3.number-item-count= count
+		span.number-item-text= text 
+mixin serviceItem(src,title,desc,alt="hello")
+	.service-item 
+		img.service-item-icon(src=src , alt= alt)
+		.service-item-info 
+			h3.service-item-title= title
+			p.service-item-desc= desc
+mixin wedoItem(src,title,classIcon,text="Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",active="")
+	.wedo-item 
+		.wedo-item-header 
+			img.wedo-item-icon(src=src)
+			h3.wedo-item-title= title
+			i.wedo-item-arrow(class= classIcon)
+		.wedo-item-content 
+			.wedo-item-text(class= active)= text
+mixin teamItem(src="././images/img-team1.png",name="Matthew Dix", position="Graphic Design")
+	.team-item 
+		.team-main 
+			img.team-image(src= src, alt="TeamIMG")
+			.team-content
+				if block 
+					block 
+		.team-info 
+			h3.team-name= name
+			span.team-position= position
+mixin workItem(src="", icon="", title="", desc="",classItem ="")
+	.work-item(class= classItem)
+		img.work-image(src= src)
+		.work-content 
+			img.work-icon(src= icon)
+			h3.work-title= title
+			span.work-desc= desc
+mixin peopleItem(src, name, job, desc)
+	li.people-item 
+		img.people-avatar(src= src)
+		.people-info 
+			h3.people-name= name
+			span.people-job= job
+			p.people-desc= desc
+mixin quoteItem(src,type = false, desc="asd", author="asd")
+	.quote-item 
+		if type == false
+			.quote-icon 
+				img(src= src)
+		else 
+			img(src= src).quote-image
+		.quote-info 
+			p.quote-desc= desc
+			span.quote-author= author

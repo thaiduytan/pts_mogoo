@@ -1,0 +1,168 @@
+.footer{
+    &-top{
+        padding: 7.5rem 7rem;
+        @include flexBox(stretch,space-between);
+    }
+    &-column{
+        width: calc(25% - 25px);
+        &:first-child{
+            width: calc(40% - 25px);
+        }
+        &:nth-child(2){
+            width: calc(35% - 25px);
+        }
+    }
+    &-heading{
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-bottom: 4rem;
+        &--logo{
+            display: inline-block;
+            margin-bottom: 2rem; 
+            text-transform: none;
+            font-size: 4.6rem;
+            font-weight: 600;
+            color: $gray-dark-color;
+        }
+    }
+    &-desc{
+        font-style: normal;
+        margin-bottom: 4.5rem;
+        margin-top: 2rem;
+    }
+    &-follower{
+        strong{
+            font-weight: bold;font-size:1.8rem;
+        }
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;border-bottom: 1px solid #e5e5e5;
+    }
+    &-social{
+        @include flexBox(center,flex-start,row,nowrap);
+        margin-bottom: 3.5rem;
+        &-icon{
+            color: $third-color;
+            margin-left: 1.5rem;
+            font-size: 2rem;
+            transition: all .25s linear;
+            &:hover{
+                color: $title-color
+            }
+        }
+    }
+    &-form{
+        width: 100%;
+        max-width: 38rem;
+        @include flexBox;
+        &-input{
+            padding: 1.5rem;
+            background-color: white;
+            border: 1px solid #e5e5e5;
+            border-right: 0;
+            outline: none;
+            font-family: $secondary-font;
+            font-size: 1.5rem;
+            font-style: italic;
+            flex-grow: 1;
+        }
+        &-button{
+            color: white;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 1.5rem 3.5rem;
+            border: 0;
+            background-color: $third-color;
+            transition: all .25s linear;
+            &:hover{
+                color: $title-color
+            }
+        }
+    }
+
+    &-blog {
+        @include flexBox(center,flex-start,row,nowrap);
+        margin-bottom: 3rem;
+        &-image{
+            @include size(12rem,8rem);
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        &-info {
+            padding-left: 2rem;
+        }
+        &-title{
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            font-weight: 500;
+            color: $title-color;
+            transition: all .25s linear;
+            @include textClamp(2);
+            &:hover{
+                color: $primary-color
+            }
+        }
+        &-date{
+            color: $text-color;
+            font-size: 1.4rem;
+            line-height: 1.4;
+            font-weight: 300;
+
+        }
+    }
+    &-images{
+        @include flexBox(stretch, flex-start, row, wrap);
+    }
+    &-image {
+        margin-left: 2px;
+        margin-bottom: 2px;
+        width: calc(33.33% - 2px);
+        padding-bottom: 33.33%;
+        height: 0;
+        position: relative;
+        img{
+            @include size(100%);
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    &-images-more{
+        color: $text-color;
+        font-weight: 300;
+        font-style: italic;
+        margin-top: 2rem;
+        display: inline-block;
+        &:hover{
+            color: $primary-color
+        }
+    }
+
+    &-bottom{
+        padding: 2.5rem 0;
+        text-align: center;
+        border-top:  1px solid #e5e5e5;
+        span{
+            color: $primary-color;
+        }
+    }
+    @include maxWidth(1023px){
+        &-top{
+            display: block;
+            padding-bottom: 3rem;padding-top: 4rem;
+            // padding-left: 0;padding-right: 0;
+        }
+        &-column{
+            width: 100% !important;
+            margin-bottom: 3rem;
+        }
+    }
+    @include maxWidth(767px){
+        &-top{
+            padding-left: 0;padding-right: 0;
+        }
+    }
+}
+@include hoverimgEffect(".footer-image");

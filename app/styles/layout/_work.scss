@@ -1,0 +1,82 @@
+.work{
+    padding-top: 10rem;
+    &-list{
+        @include flexBox(stretch, flex-start, row, nowrap);
+        height: 78rem;
+    }
+    &-column{
+        width: 25%;
+    }
+    &-content {
+        text-align: center;
+        color: white;
+        padding: 1rem;
+    }
+    &-icon{
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+    &-title{
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+        @include textClamp(2);
+    }
+    &-desc{
+        font-family: $secondary-font;
+        font-size: 1.5rem;
+        font-weight: 300;
+        font-style: italic;
+    }
+    &-image{
+        @include size(100%);
+        object-fit: cover;
+    }
+    &-item{
+        height: 50%;
+    }
+    &-item--full {
+        height: 100%;
+    }
+
+    @include maxWidth(1600px){
+        &-list{
+            height: 60rem;
+        }
+    }
+    @include maxWidth(1278px){
+        &-list{
+            flex-wrap: wrap;            
+            height: auto;
+        }
+        &-column{
+            width: 50%;
+        }
+        &-item{
+            height: 42rem;
+        }
+        &-item--full {
+            height: 84rem;
+        }
+    }
+    @include maxWidth(767px){
+        padding-top: 5rem;
+        &-item{
+            height: 25rem;
+        }
+        &-item--full {
+            height: 50rem;
+        }
+        &-icon{
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        &-title{
+            font-size: 1rem;
+        }
+        &-desc{
+            font-size: 1rem;
+        }
+    }
+}
+@include hoverEffect(".work-item", ".work-content", "false")

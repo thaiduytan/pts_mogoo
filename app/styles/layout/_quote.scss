@@ -1,0 +1,124 @@
+.quote {
+    padding: 6.5rem;
+    @include bg($gray-color);
+
+    // &-contaner {
+    //     @include flexBox(center, space-between, row, nowrap);
+    // }
+
+    &-arrow {
+        color: $gray-dark-color;
+        cursor: pointer;
+        font-size: 2rem;
+        padding: 1rem 2rem;
+    }
+
+    &-item {
+        padding-left: 5.5rem;
+        padding-right: 5.5rem;
+        @include flexBox(stretch, flex-start, row, nowrap);
+    }
+    &-image{
+        @include size(22rem);
+        object-fit: cover;
+        border-radius: 100rem;
+        flex-shrink: 0;
+    }
+    &-icon {
+        @include size(15rem);
+        @include flexBox(center, center);
+        border: 1px solid $third-color;
+        flex-shrink: 0;
+    }
+
+    &-info {
+        padding-left: 6rem;
+    }
+
+    &-desc {
+        font-size: 2.5rem;
+        font-weight: 300;
+        line-height: 1.6;
+        font-family: $secondary-font;
+        margin-bottom: 2.5rem;
+        font-style: italic;
+        color: $text-color;
+        @include textClamp(3);
+    }
+
+    &-author {
+        font-family: $third-font;
+        font-style: 2.4rem;
+        position: relative;
+        padding-left: 7rem;
+
+        &::before {
+            content: "";
+            // position: absolute;
+            @include absoluteCenter("top");
+            @include size(6rem, 4px);
+            @include bg($primary-color);
+            left: 0;
+        }
+    }
+
+
+    //slider
+    .slick-initialized .slick-slide {
+        display: flex;
+    }
+    .slick-arrow{
+        background-color: transparent;
+        border: 0;
+        color: $gray-dark-color;
+        cursor: pointer;
+        font-size: 3rem;
+        padding: 1rem 2rem;
+        @include absoluteCenter("top");
+        z-index: 10;
+    }
+    .slick-prev{
+        left: -60px !important;
+    }
+    .slick-next{
+        right:-60px!important;
+    }
+
+    @include maxWidth(767px) {
+        padding: 3rem 1rem;
+
+        &-icon {
+            @include size(10rem);
+            @include flexBox(center, center);
+            border: 1px solid $third-color;
+            flex-shrink: 0;
+            margin: 0 auto;
+        }
+
+        &-desc {
+            font-size:  1.5rem;
+            margin-bottom: 1.5rem;
+            -webkit-line-clamp: 5;
+            margin-left: 1rem;
+            // flex-shrink: 0;
+        }
+
+        &-arrow {
+            display: none;
+        }
+
+        &-item {
+            padding-left: 0;
+            padding-right: 0;
+            display: block;
+            
+        }
+
+        &-info {
+            padding-left: 0;
+        }
+        &-image{
+            @include size(15rem);
+        }
+    }
+}

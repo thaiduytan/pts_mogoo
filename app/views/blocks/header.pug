@@ -1,0 +1,41 @@
+header.header
+	.container
+		.header-top 
+			a.header-logo(href="index.html") MoGo
+			i.fa.fa-bars.header-toggle
+			ul.header-menu
+				li.header-menu-close 
+					i.header-close.fa-solid.fa-rectangle-xmark
+				+menuLink("About")
+				+menuLink("Service")
+				+menuLink("Work")
+				+menuLink("Blog")
+				+menuLink("Contact")
+				li.header-menu-item 
+					a.header-menu-icon(href="#") 
+						i.fa.fa-shopping-cart
+				li.header-menu-item 
+					a.header-menu-icon(href="#")
+						i.fa.fa-search
+		.header-content 
+			h2.header-content-caption Creative Temple 
+			h1.header-content-main WELCOME TO MOGO 
+			a.header-content-more(href="#") Learn more 
+		.header-bottom
+			+headerBottomItem({
+				class: "is-active",
+				number: "01",
+				title: "WORK",
+			})
+			+headerBottomItem({
+				number: "02",
+				title: "WORK",
+			})
+			+headerBottomItem({
+				number: "03",
+				title: "ABOUT",
+			})
+			+headerBottomItem({
+				number: "04",
+				title: "CONTACT",
+			})

@@ -1,0 +1,33 @@
+.device {
+    padding-top: 11rem;
+    background: linear-gradient(to bottom, rgba(white, 0.7), rgba(white, 0.6)),
+        url("../images/img-device-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    // &-media { them the~ div vao` bao quanh img
+    //     text-align: center;
+    // }
+
+    &-img {
+        margin: 0 auto -9.3rem;
+        display: inline-block;
+        @include absoluteCenter("left", relative);
+    }
+
+    @include maxWidth(767px) {
+        padding-top: 5rem;
+        &-img {
+            max-width: 80%;
+            margin-bottom: -5.3rem;
+        }
+    }
+    @include maxWidth(413px) {
+        padding-top: 5rem;
+        &-img {
+            max-width: 80%;
+            margin-bottom: -4rem;
+        }
+    }
+}

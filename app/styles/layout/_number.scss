@@ -1,0 +1,74 @@
+.number {
+    @include bg($third-color);
+
+    &-list {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &-item {
+        @include flexCenterBox;
+        padding: 6.5rem 3.5rem;
+        border: 1px solid white;
+        text-align: center;
+        text-transform: uppercase;
+        width: 20%;
+
+        &-count {
+            font-size: 7.2rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        &-text {
+            font-size: 1.4rem;
+            color: white;
+            line-height: 1.4;
+            @include textClamp(2);
+        }
+    }
+
+    @include maxWidth(1023px) {
+        &-item {
+            padding: 4.5rem 1.5rem;
+
+            &-count {
+                font-size: 6rem;
+                margin-bottom: 2rem;
+            }
+
+            &-text {
+                font-size: 1rem;
+            }
+        }
+
+        &-item:first-child {
+            border-left: none;
+        }
+
+        &-item:last-child {
+            border-right: none;
+        }
+    }
+
+    @include maxWidth(767px) {
+        &-list{
+            display: block;
+        }
+        &-item{
+            width: 100%;
+            padding: 3rem 1.5rem;
+            &-text {
+                font-size: 1.5rem;
+            }           
+        }
+        &-item:not(:nth-child(999)){
+            border-left: 0;
+            border-right: 0;
+        }
+        &-item:last-child{
+            border-bottom: none;
+        }
+    }
+}
